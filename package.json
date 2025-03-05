@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "deploy:production": "env-cmd -f .env.production.local gatsby-plugin-s3 deploy",
+    "deploy:production": "env-cmd -f .env.production.local npm run build && env-cmd -f .env.production.local gatsby-plugin-s3 deploy",
     "deploy:staging": "env-cmd -f .env.staging.local npm run build && env-cmd -f .env.staging.local gatsby-plugin-s3 deploy",
 
     "develop": "gatsby develop -H 0.0.0.0 -p 3000",
