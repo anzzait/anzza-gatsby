@@ -21,7 +21,7 @@ const Inquiry = () => {
 
       <div className='symbol-img-flame'>
         <StaticImage 
-          src='../../images/pDSC1814.jpg' alt="ANZZAの象徴イメージ2"
+          src='../../images/ShopInside.jpg' alt="ANZZAの店内"
           layout="constrained" 
           width={400}
           height={266}

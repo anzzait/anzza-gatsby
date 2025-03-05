@@ -6,8 +6,8 @@ const Hero = () => {
   return (
     <div className="imageContainer">
       <StaticImage 
-        src="../../images/17942726441196490.png"
-        alt="Generated Image" 
+        src="../../images/hero.png"
+        alt="両掛けバッグ" 
         className='innerImg'
       />
     </div>

@@ -37,7 +37,7 @@ const Header = () => {
 			<div className="header">
 				<Link to="/" className="header-logo">
 					<div className="img-container">
-						<StaticImage src='../../images/logo1.png' 
+						<StaticImage src='../../images/anzza-logo.png' 
 							alt="ANZZAロゴ" layout="constrained"
 							width={150}
 						/>

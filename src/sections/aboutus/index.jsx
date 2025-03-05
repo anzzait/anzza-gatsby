@@ -18,7 +18,7 @@ const Aboutus = () => {
       <div className='symbol-img-flame'>
 
         <StaticImage 
-          src='../../images/pDSC1885.jpg' alt="ANZZAの象徴イメージ"
+          src='../../images/ShopFront.jpg' alt="ANZZAの工房"
           layout="constrained" 
           width={400}
           height={266}
