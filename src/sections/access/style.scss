@@ -1,0 +1,135 @@
+@use "sass:math";
+
+// 一般的な変数やスタイルをここに定義
+@import "../../colors";
+@import "../../responsive";
+
+a {
+  text-decoration: underline;
+}
+.access {
+  padding: 7vh 7vw;
+  display: flex;
+  flex-direction: column;
+
+  // height: 100%;
+    // background-color: lightcyan;
+
+
+  .sentences {
+    font-family: 'potemin';
+    padding-bottom: 2rem;
+
+    // background-color: lightcyan;
+
+    .title {
+      color: $primary-letter-color;
+      padding-bottom: 1rem;
+    }
+  
+    .discription {
+      color: $secondary-letter-color;
+      // @extend .JP-Title18-Regular;
+    }
+  }
+
+  .infomation-map {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    // background-color: lightyellow;
+
+
+    .infomation {
+      flex: 1;
+      // background-color: lavenderblush;
+
+      padding: 1rem 1rem;
+
+      .title {
+        color: $primary-letter-color;
+        margin-bottom: 1rem;
+      }
+
+      .list {
+        $table-widths: (1, 4);
+        $total-width: 0;
+        white-space: nowrap;
+        
+        @each $width in $table-widths {
+            $total-width: $total-width + $width;
+        }
+        
+        table {
+          width: 100%;
+          border-collapse: collapse;
+      
+          td {
+            border-bottom: 1px solid black;
+            padding: 1rem 0;
+
+            // @for $i from 1 through length($table-widths) {
+            //   &:nth-child(#{$i}) {
+            //       width: percentage(nth($table-widths, $i) / $total-width);
+            //   }
+            // }
+            @for $i from 1 through length($table-widths) {
+              &:nth-child(#{$i}) {
+                width: percentage(math.div(nth($table-widths, $i), $total-width));
+              }
+            }
+
+
+
+            @media (max-width: $breakpoint-tablet) {
+              .contents {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .map {
+      flex: 1;
+      // background-color: coral;
+      display: flex; // 追加
+      align-items: flex-start; // 上側に配置
+      justify-content: flex-start; // 左側に配置
+      flex-direction: column;
+
+      padding: 1rem 1rem;
+
+      height: 50vh;
+      
+      .title {
+        margin-bottom: 1rem;
+      }
+      .gmap {
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        width: 90%;
+      }
+    }    
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      padding: 0;
+
+      .map {
+        height: 55vh;
+        
+        .gmap {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+
+  }
+}

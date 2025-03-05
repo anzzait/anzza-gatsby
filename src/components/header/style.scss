@@ -1,0 +1,172 @@
+@import "/src/colors";
+@import "/src/responsive";
+
+$HEADER-HEIGHT: 15vh;
+$HAMBURGER-WIDTH: 20%;
+
+.header {
+  display: flex;
+  align-items: center;     // 上下の中央揃え
+
+  height: $HEADER-HEIGHT;
+  width: 100%;
+
+  top: 0;
+  position: sticky;
+	background-color: $white-base;
+
+  z-index: 5;
+  
+  .header-logo {
+    flex: 2;
+
+    display: flex;           // フレックスボックスとして設定
+    align-items: center;     // 上下の中央揃え
+    justify-content: center; // 左右の中央揃え（必要に応じて）
+
+    width: 100%;
+    height: 100%;
+
+    .img-container {
+      width: 68%;
+      height: 68%;
+
+      display: flex;           // フレックスボックスとして設定
+      align-items: center;     // 上下の中央揃え
+      justify-content: center; // 左右の中央揃え（必要に応じて）
+
+      img {
+        height: 100%; // .header-logoの80%の高さになる
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .header-menu {
+    flex: 5.7;
+    position: relative;
+
+    .hamburger {
+      visibility: hidden;
+      // 絶対位置を設定して中央に配置
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+
+    }
+
+    .list {
+      visibility: visible;
+      // 絶対位置を設定して中央に配置
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .header-sns {
+    flex: 1.3;
+    height: 68%;
+
+	  // background-color: lightcyan;
+
+    display: flex;
+    justify-content: center; // 左右の中央揃え（必要に応じて）
+    align-items: center;     // 上下の中央揃え
+
+
+    .img-container {
+      width: 80%;
+      height: 68%;
+
+      display: flex;           // フレックスボックスとして設定
+      align-items: center;     // 上下の中央揃え
+      justify-content: center; // 左右の中央揃え（必要に応じて）
+
+
+      a {
+        // background-color: lightcoral;
+        $size: 3.0rem;
+
+        height: $size;
+        width: $size;
+
+        margin: 0 0.5rem;
+
+        svg {
+          height: 100%; // .header-logoの80%の高さになる
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: $breakpoint-mobile) {
+		.header-logo {
+      flex: 2;
+		}
+
+    .header-menu {
+			flex: 1;
+      height: 100%;
+
+      .hamburger {
+        visibility: visible;
+        border: none;
+        outline: none; /* フォーカス時の枠線も消す場合 */
+
+        height: 100%;
+        width: 100%;
+
+        svg {
+          $size: 68%;
+          width: $size;
+          height: $size;
+          color: black;
+
+        }
+
+      }
+      .list {
+        visibility: hidden;
+      }
+    }
+		.header-sns {
+			flex: 2;
+      a {
+        &:not(:first-child) {
+          margin: 0 0.4rem;
+        }
+      }
+		}
+  }
+}
+
+.hamburger-function {
+	width: 100%;  // 親に対して横幅100%
+	height: calc(100vh - #{$HEADER-HEIGHT});
+	top: $HEADER-HEIGHT;
+
+	position: fixed;
+	background-color: $white-base;
+
+  z-index: 5;
+
+	/* ...他のスタイル... */
+	transform: translateX(100%);  /* メニューを右に隠す */
+	transition: transform 0.5s ease-out;  /* スムーズに移動させる */
+
+	&.open {
+			transform: translateX(0);  /* メニューを表示する */
+	}
+}

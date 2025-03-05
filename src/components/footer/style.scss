@@ -1,0 +1,36 @@
+@import "../../App.scss";  // 拡張子は省略可能
+
+.Footer {
+    width: 100%;
+    position:sticky;
+
+    .footer-img {
+      width: auto; /* Allow width to adjust automatically */
+      height: 60vh; /* Define height */
+      margin: 0 auto; /* Center horizontally */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
+    }
+
+    .footer-gap {
+      background: #2C343A;
+      height: 17vh; /* Ensure it takes full height of the parent */
+    }
+
+    .footer-bottom {
+      background: #2C343A;
+      // height: 2.8rem; /* Ensure it takes full height of the parent */
+
+      .footer-text {
+        display: block; /* Change to block for stacking */
+        color: #7A7A7A;
+        font-family: 'Trajan Pro', serif; /* Set font to Trajan Pro */
+        font-size: 0.8rem;
+        text-align: center; /* Center text horizontally */
+      }
+    }
+
+
+}
+
+
+

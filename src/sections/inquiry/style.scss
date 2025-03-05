@@ -1,0 +1,62 @@
+// 一般的な変数やスタイルをここに定義
+@import "/src/colors";
+@import "/src/responsive";
+
+
+.inquiry {
+
+  padding: 7vh 4vw 7vh 0.5vw;
+
+
+  // background-color: lightcyan;
+
+  display: flex;
+  justify-content: space-between;
+
+  flex-direction: row-reverse;
+
+
+  .sentences {
+    flex: 5.5;
+    font-family: 'potemin';
+    padding: 0;
+
+    .title {
+      color: $primary-letter-color;
+      padding-bottom: 1rem;
+    }
+  
+    .discription {
+      color: $secondary-letter-color;
+    }
+  }
+
+  
+  .symbol-img-flame {
+    /* ここに希望する幅と高さを設定 */
+    flex: 3.5;
+    width: 100%;  
+    height: auto;
+    
+    padding: 2rem 2rem 0;
+
+    /* 縦のカットを行うためのスタイル */
+    overflow: hidden;
+    
+    // background-color: lightgoldenrodyellow;
+
+    img {
+      width: 100%; /* 横サイズを合わせる */
+      /* 画像の縦のサイズがコンテナよりも大きい場合、適切にカットされます */
+      object-fit: cover;
+    }
+  }
+
+  // メディアクエリを使用して、縦画面時のスタイルを変更
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    .symbol-img-flame {
+      padding: 0;
+    }
+  }
+}
