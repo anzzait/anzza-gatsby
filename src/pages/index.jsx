@@ -1,6 +1,6 @@
 // src/pages/index.jsx
 import React, { useEffect } from 'react';
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import { Element } from 'react-scroll'
 
 import Hero from "../components/hero"
