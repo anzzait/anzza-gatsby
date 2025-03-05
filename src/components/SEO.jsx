@@ -15,7 +15,7 @@ const SEO = ({ title, description, pathname, children }) => {
   }
 
   return (
-    <>
+    <div>
       <title>{seo.title}</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <meta name="description" content={seo.description} />
@@ -35,8 +35,20 @@ const SEO = ({ title, description, pathname, children }) => {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ANZZA ~bottega di borsa~",
+          "url": "https://anzza.jp",
+          "logo": "https://anzza.jp/images/favicon.png"
+        })}
+      </script>
+      
       {children}
-    </>
+      
+    </div>
   )
 }
 

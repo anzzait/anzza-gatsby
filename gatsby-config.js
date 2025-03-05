@@ -1,3 +1,4 @@
+// gatsby-config.js
 /**
  * @type {import('gatsby').GatsbyConfig}
  */

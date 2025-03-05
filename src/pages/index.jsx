@@ -8,10 +8,10 @@ import Aboutus from '../sections/aboutus'
 import Inquiry from '../sections/inquiry'
 import Access from '../sections/access'
 
-import Seo from '../components/seo'
+import SEO from '@/components/SEO'
 
 const IndexPage = () => {
-  useEffect(() => { // ← useEffectフックを追加
+  useEffect(() => { 
     if (window.location.search) {
       const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
       window.history.replaceState({}, document.title, cleanUrl);
@@ -19,25 +19,24 @@ const IndexPage = () => {
   }, []);
   
   return (
-    <Layout>
-      <main>
-        <Hero />
-        <Element name="aboutus">
-          <Aboutus/>
-        </Element>
-        <Element name="inquiry">
-          <Inquiry/>
-        </Element>
-        <Element name="access">
-          <Access/>
-        </Element>
-      </main>
-    </Layout>
+    <SEO>
+      <Layout>
+        <main>
+          <Hero />
+          <Element name="aboutus">
+            <Aboutus/>
+          </Element>
+          <Element name="inquiry">
+            <Inquiry/>
+          </Element>
+          <Element name="access">
+            <Access/>
+          </Element>
+        </main>
+      </Layout>
+    </SEO>
   )
 }
 
 export default IndexPage
-
-export const Head = () => 
-  <Seo title="" />
 
